@@ -111,9 +111,28 @@ interface  wlan0
 max_leases 5
 option subnet 255.255.255.252
 ```
-Now we just have to restart the hostapd process:
+
+Start it all up...
+Create a shell script (mine is startup.sh) with the following entries:
 ```
-sudo hostapd -dd /etc/hostapd/hostapd.conf
+echo APD ifconfig
+ifconfig wlan0 192.168.2.2
+echo APD starting dhcp server
+udhcpd
+echo APD start wifi AP
+hostapd -dd /etc/hostapd/hostapd.conf
 ```
+Save and...
+
+Set permissions
+```
+chmod 700 startup.sh
+```
+
+Execute
+```
+./startup.sh
+```
+
 Now take a second device and connect to the network you just created!
 
