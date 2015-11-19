@@ -13,6 +13,10 @@ sudo apt-get install hostapd
 ```
 
 ##Get the drivers required for the EDIMAX USB dongle
+* If you are wondering what your device type is you can typ the following into a terminal to get the details
+```
+lsusb
+```
 * You can pull the required version from the Realtek website: http://www.realtek.com.tw/downloads/downloadsView.aspx?Langid=1&PNid=21&PFid=48&Level=5&Conn=4&DownTypeID=3&GetDown=false
 * Copy the file to the BBB
 * Use the terminal to finish creating the required driver:
